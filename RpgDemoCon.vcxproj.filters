@@ -19,10 +19,16 @@
     <Filter Include="Исходные файлы\Engine">
       <UniqueIdentifier>{429bc556-df03-4406-b320-add666072efe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Screen">
+      <UniqueIdentifier>{8a9b07b9-826b-4483-a3c2-1ded65c38bd0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.h">
       <Filter>Файлы заголовков\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="screen.h">
+      <Filter>Файлы заголовков\Screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
