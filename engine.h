@@ -1,4 +1,5 @@
 #pragma once
+#include "game_state.h"
 #include <Windows.h>
 
 /**
@@ -8,6 +9,7 @@ class Engine
 {
 private:
   HANDLE mConsoleHandle;
+  GameState mGameState;
 
   bool mRunning{ true };
 public:

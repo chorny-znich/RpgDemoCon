@@ -30,12 +30,18 @@
     <ClInclude Include="screen.h">
       <Filter>Файлы заголовков\Screen</Filter>
     </ClInclude>
+    <ClInclude Include="game_state.h">
+      <Filter>Файлы заголовков\Engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp">
       <Filter>Исходные файлы\Engine</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="game_state.cpp">
       <Filter>Исходные файлы\Engine</Filter>
     </ClCompile>
   </ItemGroup>
