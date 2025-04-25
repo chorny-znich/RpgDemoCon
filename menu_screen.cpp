@@ -15,31 +15,34 @@ void MenuScreen::processUserInput(size_t option)
 {
   switch (option) {
   case '1':
-    system("cls");
-    mRenderScreen = true;
-    //ScreenManager::createScreen(GameData::Screens::EXPLORE_SCREEN);
+    startGame();
     break;
   case '2':
-    system("cls");
-    mRenderScreen = true;
-    //ScreenManager::createScreen(GameData::Screens::HERO_CREATION_SCREEN);
+    createHero();
     break;
   case '3':
-    GameState::destroyScreen();
+    closeScreen();
     break;
   }
 }
 
 void MenuScreen::startGame()
 {
+  system("cls");
+  mRenderScreen = true;
+  //ScreenManager::createScreen(GameData::Screens::EXPLORE_SCREEN);
 }
 
 void MenuScreen::createHero()
 {
+  system("cls");
+  mRenderScreen = true;
+  //ScreenManager::createScreen(GameData::Screens::HERO_CREATION_SCREEN);
 }
 
 void MenuScreen::closeScreen()
 {
+  GameState::destroyScreen();
 }
 
 void MenuScreen::init()
