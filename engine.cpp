@@ -1,6 +1,8 @@
 #include "engine.h"
 #include "screen_manager.h"
+#include "menu_screen.h"
 #include <iostream>
+#include <format>
 
 void Engine::init()
 {
@@ -20,31 +22,41 @@ void Engine::init()
 
 void Engine::input()
 {
-  std::cout << "input()\n";
+  if (!mGameState.isEmpty()) {
+    mGameState.getCurrent()->inputHandler();
+  }
 }
 
 void Engine::update()
 {
-  std::cout << "update()\n";
+  if (!mGameState.isEmpty()) {
+    mGameState.getCurrent()->update();
+  }
 }
 
 void Engine::render()
 {
-  COORD cursorCoord;
-  cursorCoord.X = 0;
-  cursorCoord.Y = 0;
-  SetConsoleCursorPosition(mConsoleHandle, cursorCoord);
+  if (!mGameState.isEmpty()) {
+    COORD cursorCoord;
+    cursorCoord.X = 0;
+    cursorCoord.Y = 0;
+    SetConsoleCursorPosition(mConsoleHandle, cursorCoord);
 
-  std::cout << "render()\n";
+    mGameState.getCurrent()->render();
+  }
 }
 
 void Engine::run()
 {
   init();
+  ScreenManager::createScreen<MenuScreen>("MAIN_MENU");
 
-  while (mRunning) {
+  while (mRunning && !mGameState.isEmpty()) {
     input();
     update();
     render();
   }
+
+  system("cls");
+  std::cout << std::format("\t\tThe game is over\n");
 }

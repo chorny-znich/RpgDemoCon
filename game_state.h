@@ -10,17 +10,9 @@
 class GameState
 {
 private:
-  struct Deleter
-  {
-    void operator() (GameState* p)
-    {
-      delete p;
-    }
-  };
-
   std::stack<std::unique_ptr<Screen>> mScreens;
 
-  inline static std::unique_ptr<GameState, Deleter> mpInstance{};
+  inline static GameState* mpInstance{};
 public:
   GameState();
   GameState(const GameState&) = delete;

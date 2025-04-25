@@ -4,7 +4,7 @@
 GameState::GameState()
 {
   assert(mpInstance == nullptr);
-  mpInstance.reset(this);
+  mpInstance = this;
 }
 
 /**

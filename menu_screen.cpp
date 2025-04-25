@@ -1,4 +1,5 @@
 #include "menu_screen.h"
+#include "game_state.h"
 #include <iostream>
 #include <conio.h>
 
@@ -32,7 +33,7 @@ void MenuScreen::inputHandler()
         //ScreenManager::createScreen(GameData::Screens::HERO_CREATION_SCREEN);
         break;
       case '3':
-        exit(0);
+        GameState::destroyScreen();
         break;
       }
     }
