@@ -11,6 +11,37 @@ void MenuScreen::showMainMenu()
   std::cout << "\t\tDeveloped by Vargar\n\t\t\t2025";
 }
 
+void MenuScreen::processUserInput(size_t option)
+{
+  switch (option) {
+  case '1':
+    system("cls");
+    mRenderScreen = true;
+    //ScreenManager::createScreen(GameData::Screens::EXPLORE_SCREEN);
+    break;
+  case '2':
+    system("cls");
+    mRenderScreen = true;
+    //ScreenManager::createScreen(GameData::Screens::HERO_CREATION_SCREEN);
+    break;
+  case '3':
+    GameState::destroyScreen();
+    break;
+  }
+}
+
+void MenuScreen::startGame()
+{
+}
+
+void MenuScreen::createHero()
+{
+}
+
+void MenuScreen::closeScreen()
+{
+}
+
 void MenuScreen::init()
 {
 }
@@ -18,24 +49,9 @@ void MenuScreen::init()
 void MenuScreen::handleInput()
 {
   if (!mRenderScreen) {
-    size_t menuItem{ 0 };
     if (_kbhit()) {
-      int menuItem = _getch();
-      switch (menuItem) {
-      case '1':
-        system("cls");
-        mRenderScreen = true;
-        //ScreenManager::createScreen(GameData::Screens::EXPLORE_SCREEN);
-        break;
-      case '2':
-        system("cls");
-        mRenderScreen = true;
-        //ScreenManager::createScreen(GameData::Screens::HERO_CREATION_SCREEN);
-        break;
-      case '3':
-        GameState::destroyScreen();
-        break;
-      }
+      int userOption = _getch();
+      processUserInput(userOption);
     }
     mRenderScreen = true;
   }

@@ -1,5 +1,7 @@
 #pragma once
 #include "screen.h"
+#include <unordered_map>
+#include <functional>
 
 /**
  * @brief Start screen that contains the main menu
@@ -12,7 +14,12 @@ class MenuScreen : public Screen
 {
 private:
 	bool mRenderScreen{ true };
+	
 	void showMainMenu();
+	void processUserInput(size_t option);
+	void startGame();
+	void createHero();
+	void closeScreen();
 
 public:
 	void init() override;
