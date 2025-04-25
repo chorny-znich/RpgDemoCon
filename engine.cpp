@@ -23,7 +23,7 @@ void Engine::init()
 void Engine::input()
 {
   if (!mGameState.isEmpty()) {
-    mGameState.getCurrent()->inputHandler();
+    mGameState.getCurrent()->handleInput();
   }
 }
 

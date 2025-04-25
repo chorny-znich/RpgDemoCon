@@ -15,7 +15,7 @@ void MenuScreen::init()
 {
 }
 
-void MenuScreen::inputHandler()
+void MenuScreen::handleInput()
 {
   if (!mRenderScreen) {
     size_t menuItem{ 0 };

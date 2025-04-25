@@ -16,7 +16,7 @@ private:
 
 public:
 	void init() override;
-	void inputHandler() override;
+	void handleInput() override;
 	void update() override;
 	void render() override;
 };
