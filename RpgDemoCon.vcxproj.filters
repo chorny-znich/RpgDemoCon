@@ -39,6 +39,9 @@
     <ClInclude Include="screen_manager.h">
       <Filter>Файлы заголовков\Screen</Filter>
     </ClInclude>
+    <ClInclude Include="menu_screen.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp">
@@ -52,6 +55,9 @@
     </ClCompile>
     <ClCompile Include="screen_manager.cpp">
       <Filter>Исходные файлы\Screen</Filter>
+    </ClCompile>
+    <ClCompile Include="menu_screen.cpp">
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -131,6 +131,7 @@
   <ItemGroup>
     <ClInclude Include="engine.h" />
     <ClInclude Include="game_state.h" />
+    <ClInclude Include="menu_screen.h" />
     <ClInclude Include="screen.h" />
     <ClInclude Include="screen_manager.h" />
   </ItemGroup>
@@ -138,6 +139,7 @@
     <ClCompile Include="engine.cpp" />
     <ClCompile Include="game_state.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="menu_screen.cpp" />
     <ClCompile Include="screen_manager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
