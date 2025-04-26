@@ -130,6 +130,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="engine.h" />
+    <ClInclude Include="explore_screen.h" />
     <ClInclude Include="game_state.h" />
     <ClInclude Include="menu_screen.h" />
     <ClInclude Include="screen.h" />
@@ -137,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp" />
+    <ClCompile Include="explore_screen.cpp" />
     <ClCompile Include="game_state.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu_screen.cpp" />

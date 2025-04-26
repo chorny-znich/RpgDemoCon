@@ -1,4 +1,6 @@
 #include "menu_screen.h"
+#include "explore_screen.h"
+#include "screen_manager.h"
 #include "game_state.h"
 #include <iostream>
 #include <conio.h>
@@ -30,7 +32,7 @@ void MenuScreen::startGame()
 {
   system("cls");
   mRenderScreen = true;
-  //ScreenManager::createScreen(GameData::Screens::EXPLORE_SCREEN);
+  ScreenManager::createScreen<ExploreScreen>("EXPLORE_SCREEN");
 }
 
 void MenuScreen::createHero()

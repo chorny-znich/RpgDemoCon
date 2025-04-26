@@ -42,6 +42,9 @@
     <ClInclude Include="menu_screen.h">
       <Filter>Файлы заголовков\Screen</Filter>
     </ClInclude>
+    <ClInclude Include="explore_screen.h">
+      <Filter>Файлы заголовков\Screen</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp">
@@ -57,6 +60,9 @@
       <Filter>Исходные файлы\Screen</Filter>
     </ClCompile>
     <ClCompile Include="menu_screen.cpp">
+      <Filter>Исходные файлы\Screen</Filter>
+    </ClCompile>
+    <ClCompile Include="explore_screen.cpp">
       <Filter>Исходные файлы\Screen</Filter>
     </ClCompile>
   </ItemGroup>
