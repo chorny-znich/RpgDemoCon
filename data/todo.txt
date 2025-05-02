@@ -1,0 +1,65 @@
+Version 0.2.0
+-------------
++ Loot can spawn in random places.
++ Ranged weapon appear in the game.
+	+ The player can shoot in 4 directions
+	+ Check if the Hero hit an enemy
+	+ Deal a damage to an enemy when hit him
+	+ The hero uses supply (arrows) for shooting
+	+ The hero can find arrows on the level
++ Traps spawn in the game.
+	+ The hero can evade a trap with the Reaction secondary stat
+	+ The hero can disactivate a trap that he found with the Disarm Trap skill
++ Enemy AI
+	+ The enemy knows locations in 1 tile near him
+	+ The enemy attacks player near him
+	+ The enemy has a line of sight as a stat
+	+ The enemy knows locations depending on his Sight stat
+	+ The enemy moves to a player when he see him
+
+Version 0.3.0
+-------------
++ Doors can be hidden and the hero must check Attention stat to find them
+Loot
+	+ The hero can find food
+	+ The hero can find wood
+	+ The hero can find iron
+Craft
+	The hero can craft arrows
+	The hero can craft food
+Hero
+	The hero has a secondary stat - Energy which depends on the Stamina
+	The energy decreases when the hero doing actions (attack, walk)
+	The hero eats food to increase Energy
+Secondary stat
+	Trade = decreased merchant prices, increased prices for your staff. Depend on Intellect and Charisma 
+Skill
+	Commerce - improve you Trade on 5%
+Merchant
+	Sells consumable items
+Trap
+	Reconsider traps mechanic
+	When you trying to disarm a trap the following options are possible:
+		nothing happens;
+		the trap is activating and deal you a damage;
+		you can't try to disarm a trap anymore;
+Equipment
+	Equipment has a status which can be INVENTORY HERO
+	The player can't sell equipped equipment
+
+Version 0.4.0
+-------------
+Loot
+	Chest with loot spawns on the level
+Battle
+	The dice's roll 12 is a critical strike which always hits and deals more damage
+Hero
+	The hero has a line of sight
+Mechanics
+	Open a locked door using 'Deft hands' skill and consumable item - lockpick 
+The player can save the game at any moment.
+
+Version 0.5.0
+-------------
+Loot
+	The hero can find a loot on the enemy's corps

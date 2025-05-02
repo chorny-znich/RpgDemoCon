@@ -1,0 +1,4 @@
+Secondary stat
+add secondary stat name into RPStat class mSecondaryStats member
+add secondary stat name into HeroCreationScreen class mSecondaryStatsList member
+add stat's calculation into HeroCreationScreen class calcSecondaryStats method

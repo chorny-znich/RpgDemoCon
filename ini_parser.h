@@ -7,6 +7,7 @@
  * Engine cofiguration files
  * Game maps
  * Palyer's data
+ * Version 1.1.0
  */
 namespace dr
 {

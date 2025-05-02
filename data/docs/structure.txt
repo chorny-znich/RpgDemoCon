@@ -1,0 +1,13 @@
+All game's items store in 'data/items.txt'. Data class manages game's database. Database creates in init() as the game starts.
+Enemies' list store in data/enemy_list.txt. Data class manages enemies's database. Database creates in init() as the game starts.
+
+MapManager:
+  Actions on initialize:
+    - create a list of all maps
+    - create lists of file names for enemies, objects and npcs
+    - create a list of locations for every map
+
+Enemies, objects, npcs create or load in changeMap() method in ExploreScreen class
+Enemies, objects, npcs set to the render map in apropriate methods in Map class
+
+The door object creating in the Object manager in the CreateObject method

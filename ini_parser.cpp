@@ -35,4 +35,24 @@ namespace dr
 		}
 		return doc;
   }
+
+	/**
+	 * @brief Create the new empty section in the document and return it
+	 * @param The name of the new section
+	 * @return The empty section
+	*/
+	Section& IniDocument::addSection(const std::string& name)
+	{
+		return mSections[name];
+	}
+
+	/**
+	 * @brief return the section from ini document with its records
+	 * @param the section name
+	 * @return the section from ini document with its records
+	*/
+	const Section& IniDocument::getSection(const std::string& name) const
+	{
+		return mSections.at(name);
+	}
 }

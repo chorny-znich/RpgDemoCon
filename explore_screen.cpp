@@ -2,6 +2,7 @@
 
 void ExploreScreen::init()
 {
+  mMapManager.init();
 }
 
 void ExploreScreen::handleInput()

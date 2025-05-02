@@ -14,7 +14,7 @@ private:
   GameData::LocationMap mLocationMap;
   GameData::Size mMapSize;
 public:
-  Map(size_t id, GameData::Size);
+  Map(size_t id);
   void createMap(const std::string& filename);
   void render();
 };
