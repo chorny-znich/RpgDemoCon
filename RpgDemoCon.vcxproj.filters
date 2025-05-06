@@ -37,6 +37,9 @@
     <Filter Include="Исходные файлы\Utility">
       <UniqueIdentifier>{31439125-ff7b-4238-8316-9767e7005343}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы ресурсов\Map">
+      <UniqueIdentifier>{1fb6c19e-f2da-47fe-800f-a4e5e1bfb111}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.h">
@@ -104,5 +107,10 @@
     <ClCompile Include="map_manager.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\maps\map_0.ini">
+      <Filter>Файлы ресурсов\Map</Filter>
+    </None>
   </ItemGroup>
 </Project>

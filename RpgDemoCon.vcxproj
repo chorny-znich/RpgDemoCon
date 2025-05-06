@@ -153,6 +153,9 @@
     <ClCompile Include="menu_screen.cpp" />
     <ClCompile Include="screen_manager.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\maps\map_0.ini" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
