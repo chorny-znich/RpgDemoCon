@@ -14,6 +14,6 @@ private:
   std::unordered_map<size_t, Map> mMaps;
 public:
   void init();
-  //Map& getCurrentMap();
+  Map& getCurrentMap();
 };
 

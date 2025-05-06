@@ -9,3 +9,12 @@ void MapManager::init()
     mMaps.insert({ i, newMap });
   }
 }
+
+/**
+ * @brief Return the reference to map according the index of the current map
+ * @return reference to map
+ */
+Map& MapManager::getCurrentMap()
+{
+  return mMaps.at(mCurrentMapIndex);
+}
