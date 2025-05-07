@@ -10,9 +10,17 @@
 class ExploreScreen : public Screen
 {
 private:
+	enum class GameplayState
+	{
+		PLAYER_INPUT,
+		PLAYER_TURN,
+		PLAYER_TURN_SHOW
+	};
+private:
 	MapManager mMapManager;
 	Map mCurrentMap;
 	Player mPlayer;
+	GameplayState mGameplayState{ GameplayState::PLAYER_TURN };
 
 	void changeMap();
 public:

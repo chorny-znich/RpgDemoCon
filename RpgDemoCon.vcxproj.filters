@@ -82,7 +82,7 @@
       <Filter>Файлы заголовков\Map</Filter>
     </ClInclude>
     <ClInclude Include="player.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -114,10 +114,10 @@
       <Filter>Исходные файлы\Map</Filter>
     </ClCompile>
     <ClCompile Include="map_manager.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Map</Filter>
     </ClCompile>
     <ClCompile Include="player.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
