@@ -138,6 +138,7 @@
     <ClInclude Include="map.h" />
     <ClInclude Include="map_manager.h" />
     <ClInclude Include="menu_screen.h" />
+    <ClInclude Include="player.h" />
     <ClInclude Include="screen.h" />
     <ClInclude Include="screen_manager.h" />
   </ItemGroup>
@@ -151,6 +152,7 @@
     <ClCompile Include="map.cpp" />
     <ClCompile Include="map_manager.cpp" />
     <ClCompile Include="menu_screen.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="screen_manager.cpp" />
   </ItemGroup>
   <ItemGroup>

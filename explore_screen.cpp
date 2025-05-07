@@ -22,6 +22,7 @@ void ExploreScreen::handleInput()
 void ExploreScreen::update()
 {
   mCurrentMap.update();
+  mPlayer.update(mCurrentMap.getRenderMap());
 }
 
 void ExploreScreen::render()

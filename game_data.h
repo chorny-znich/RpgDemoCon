@@ -12,4 +12,6 @@ namespace GameData
   using LocationMap = std::vector<Location>;
   using RenderMap = std::vector<std::string>;
   using Size = std::pair<size_t, size_t>;
+  using Position = std::pair<size_t, size_t>;
+  using Movement = std::pair<int, int>;
 }

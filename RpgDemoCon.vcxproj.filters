@@ -40,6 +40,12 @@
     <Filter Include="Файлы ресурсов\Map">
       <UniqueIdentifier>{1fb6c19e-f2da-47fe-800f-a4e5e1bfb111}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Player">
+      <UniqueIdentifier>{416f1725-3296-45a2-ac33-27f64e4db1b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Player">
+      <UniqueIdentifier>{54279e5e-073c-4396-8d1a-ea17dd359eed}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.h">
@@ -73,6 +79,9 @@
       <Filter>Файлы заголовков\Map</Filter>
     </ClInclude>
     <ClInclude Include="map_manager.h">
+      <Filter>Файлы заголовков\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -105,6 +114,9 @@
       <Filter>Исходные файлы\Map</Filter>
     </ClCompile>
     <ClCompile Include="map_manager.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

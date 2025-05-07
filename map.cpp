@@ -56,6 +56,11 @@ void Map::createMap(const std::string& filename)
   }
 }
 
+GameData::RenderMap& Map::getRenderMap()
+{
+  return mRenderMap;
+}
+
 void Map::update()
 {
   createRenderMap();
