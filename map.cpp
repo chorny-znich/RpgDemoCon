@@ -1,5 +1,37 @@
 #include "map.h"
 #include "ini_parser.h"
+#include <iostream>
+
+/**
+ * @brief Create the vector of chars representing game's map
+ */
+void Map::createRenderMap()
+{
+  mRenderMap.clear();
+  for (size_t i{ 0 }; i < mMapSize.second; i++) {
+    std::string renderLine{};
+    for (size_t j{ 0 }; j < mMapSize.first; j++) {
+      renderLine += getSymbol(mLocationMap[i * mMapSize.first + j]);
+    }
+    mRenderMap.push_back(renderLine);
+  }
+}
+
+char Map::getSymbol(const Location& loc)
+{
+  char result{' '};
+  if (loc.getObjectLayerId() == "none") {
+    if (loc.getFloorLayerId() == "dirt") {
+      result = ' ';
+    }
+  }
+  else {
+    if (loc.getObjectLayerId() == "wall") {
+      result = '#';
+    }
+  }
+  return result;
+}
 
 void Map::createMap(const std::string& filename)
 {
@@ -24,6 +56,17 @@ void Map::createMap(const std::string& filename)
   }
 }
 
+void Map::update()
+{
+  createRenderMap();
+}
+
+/**
+ * @brief Create the vector of chars representing
+ */
 void Map::render()
 {
+  for (const auto& line : mRenderMap) {
+    std::cout << line << '\n';
+  }
 }

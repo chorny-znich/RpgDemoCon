@@ -12,8 +12,13 @@ class Map
 private:
   size_t mId;
   GameData::LocationMap mLocationMap;
+  GameData::RenderMap mRenderMap;
   GameData::Size mMapSize;
+
+  void createRenderMap();
+  char getSymbol(const Location& loc);
 public:
   void createMap(const std::string& filename);
+  void update();
   void render();
 };

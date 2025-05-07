@@ -10,5 +10,6 @@ namespace GameData
 {
   using TextMap = std::vector<std::string>;
   using LocationMap = std::vector<Location>;
+  using RenderMap = std::vector<std::string>;
   using Size = std::pair<size_t, size_t>;
 }

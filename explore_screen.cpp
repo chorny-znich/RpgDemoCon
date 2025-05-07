@@ -12,6 +12,7 @@ void ExploreScreen::changeMap()
 void ExploreScreen::init()
 {
   mMapManager.init();
+  changeMap();
 }
 
 void ExploreScreen::handleInput()
@@ -20,8 +21,10 @@ void ExploreScreen::handleInput()
 
 void ExploreScreen::update()
 {
+  mCurrentMap.update();
 }
 
 void ExploreScreen::render()
 {
+  mCurrentMap.render();
 }
