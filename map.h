@@ -19,7 +19,9 @@ private:
   char getSymbol(const Location& loc);
 public:
   void createMap(const std::string& filename);
+  GameData::LocationMap& getMap();
   GameData::RenderMap& getRenderMap();
+  GameData::Size getMapSize() const;
   void update();
   void render();
 };

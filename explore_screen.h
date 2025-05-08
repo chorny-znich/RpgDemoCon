@@ -22,6 +22,8 @@ private:
 	Player mPlayer;
 	GameplayState mGameplayState{ GameplayState::PLAYER_TURN };
 
+	bool detectCollision(GameData::Position pos, GameData::Movement move);
+
 	void changeMap();
 public:
 	void init() override;

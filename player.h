@@ -10,12 +10,17 @@ private:
   const int CHAR_STEP{ 1 };
   Position mPosition{ 1, 1 };
   GameData::Movement mMovement{ 0, 0 };
+  bool mMoving{ false };
   const char SYMBOL = '@';
 public:
   void moveWest();
   void moveEast();
   void moveNorth();
   void moveSouth();
-
+  void setMovement(GameData::Movement movement);
+  GameData::Movement getMovement() const;
+  void setMovingState(bool move);
+  bool isMoving() const;
+  GameData::Position getPosition() const;
   void update(GameData::RenderMap& renderMap);
 };

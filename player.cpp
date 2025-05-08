@@ -20,7 +20,38 @@ void Player::moveSouth()
   mMovement = { 0 , CHAR_STEP };
 }
 
+void Player::setMovement(GameData::Movement movement)
+{
+  mMovement = movement;
+}
+
+GameData::Movement Player::getMovement() const
+{
+  return mMovement;
+}
+
+void Player::setMovingState(bool move)
+{
+  mMoving = move;
+}
+
+bool Player::isMoving() const
+{
+  return mMoving;
+}
+
+GameData::Position Player::getPosition() const
+{
+  return mPosition;
+}
+
 void Player::update(GameData::RenderMap& renderMap)
 {
+  // move the player
+  mPosition.first += mMovement.first;
+  mPosition.second += mMovement.second;
+  mMovement = { 0, 0 };
+  mMoving = false;
+  // draw a player on the map
   renderMap[mPosition.second][mPosition.first] = SYMBOL;
 }

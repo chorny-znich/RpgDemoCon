@@ -56,9 +56,19 @@ void Map::createMap(const std::string& filename)
   }
 }
 
+GameData::LocationMap& Map::getMap()
+{
+  return mLocationMap;
+}
+
 GameData::RenderMap& Map::getRenderMap()
 {
   return mRenderMap;
+}
+
+GameData::Size Map::getMapSize() const
+{
+  return mMapSize;
 }
 
 void Map::update()
