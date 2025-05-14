@@ -136,6 +136,7 @@
     <ClInclude Include="ini_parser.h" />
     <ClInclude Include="location.h" />
     <ClInclude Include="map.h" />
+    <ClInclude Include="map_converter.h" />
     <ClInclude Include="map_manager.h" />
     <ClInclude Include="menu_screen.h" />
     <ClInclude Include="player.h" />
@@ -150,6 +151,7 @@
     <ClCompile Include="location.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="map.cpp" />
+    <ClCompile Include="map_converter.cpp" />
     <ClCompile Include="map_manager.cpp" />
     <ClCompile Include="menu_screen.cpp" />
     <ClCompile Include="player.cpp" />

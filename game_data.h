@@ -14,4 +14,9 @@ namespace GameData
   using Size = std::pair<size_t, size_t>;
   using Position = std::pair<size_t, size_t>;
   using Movement = std::pair<int, int>;
+
+  inline namespace path
+  {
+    const std::string Map = R"(data/maps/)";
+  }
 }

@@ -1,5 +1,6 @@
 #pragma once
 #include "screen.h"
+#include "map_converter.h"
 #include <unordered_map>
 #include <functional>
 
@@ -14,12 +15,15 @@ class MenuScreen : public Screen
 {
 private:
 	bool mRenderScreen{ true };
+
+	MapConverter mConverter;
 	
 	void showMainMenu();
 	void processUserInput(size_t option);
 	void startGame();
 	void createHero();
 	void closeScreen();
+	void convertMap();
 
 public:
 	void init() override;
@@ -27,4 +31,3 @@ public:
 	void update() override;
 	void render() override;
 };
-

@@ -84,6 +84,9 @@
     <ClInclude Include="player.h">
       <Filter>Файлы заголовков\Player</Filter>
     </ClInclude>
+    <ClInclude Include="map_converter.h">
+      <Filter>Файлы заголовков\Utility</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp">
@@ -118,6 +121,9 @@
     </ClCompile>
     <ClCompile Include="player.cpp">
       <Filter>Исходные файлы\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="map_converter.cpp">
+      <Filter>Исходные файлы\Utility</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

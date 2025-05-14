@@ -10,7 +10,7 @@
 class Map
 {
 private:
-  size_t mId;
+  size_t mId{ 0 };
   GameData::LocationMap mLocationMap;
   GameData::RenderMap mRenderMap;
   GameData::Size mMapSize;
