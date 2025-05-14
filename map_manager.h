@@ -1,5 +1,6 @@
 #pragma once
 #include "map.h"
+#include "map_entry.h"
 #include <unordered_map>
 
 /**
@@ -12,6 +13,9 @@ private:
   const size_t NUMBER_OF_MAPS = 1;
   size_t mCurrentMapIndex{ 0 };
   std::unordered_map<size_t, Map> mMaps;
+  std::unordered_map<std::string, MapEntry> mEntries;
+
+  void loadEntries();
 public:
   void init();
   Map& getCurrentMap();

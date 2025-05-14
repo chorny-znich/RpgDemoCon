@@ -3,7 +3,6 @@
 #include "game_data.h"
 #include <utility>
 
-
 /**
  * @brief Game map contains group of locations
  */

@@ -137,6 +137,7 @@
     <ClInclude Include="location.h" />
     <ClInclude Include="map.h" />
     <ClInclude Include="map_converter.h" />
+    <ClInclude Include="map_entry.h" />
     <ClInclude Include="map_manager.h" />
     <ClInclude Include="menu_screen.h" />
     <ClInclude Include="player.h" />
@@ -152,12 +153,14 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="map.cpp" />
     <ClCompile Include="map_converter.cpp" />
+    <ClCompile Include="map_entry.cpp" />
     <ClCompile Include="map_manager.cpp" />
     <ClCompile Include="menu_screen.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="screen_manager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="data\entries.ini" />
     <None Include="data\maps\map_0.ini" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,5 +1,28 @@
 #include "map_manager.h"
+#include "ini_parser.h"
+#include "game_data.h"
 #include <format>
+
+
+/**
+ * @brief Load map entries from the ini file
+ */
+void MapManager::loadEntries()
+{
+  dr::IniDocument doc = dr::load(GameData::path::Entry);
+  dr::Section generalInfo = doc.getSection("general");
+  size_t numberOfEntries = std::stoul(generalInfo.at("number_of_entries"));
+  for (size_t i{ 0 }; i < numberOfEntries; i++) {
+    dr::Section section = doc.getSection(std::format("entry_{}", i));
+    MapEntry newMapEntry;
+    newMapEntry.setId(section.at("id"));
+    newMapEntry.setMapId(std::stoul(section.at("map_id")));
+    newMapEntry.setPosition({ std::stoul(section.at("position_x")), std::stoul(section.at("position_y")) });
+    newMapEntry.setLinkedEntryId(section.at("linked_entry_id"));
+    newMapEntry.setVisibility(std::stoul(section.at("visibility")));
+    mEntries[std::format("entry_{}_{}", newMapEntry.getMapId(), i)] = newMapEntry;
+  }
+}
 
 void MapManager::init()
 {
@@ -8,6 +31,7 @@ void MapManager::init()
     newMap.createMap(std::format("data/maps/map_{}.ini", i));
     mMaps.insert({ i, newMap });
   }
+  loadEntries();
 }
 
 /**

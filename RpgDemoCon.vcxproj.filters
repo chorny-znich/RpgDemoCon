@@ -46,6 +46,9 @@
     <Filter Include="Исходные файлы\Player">
       <UniqueIdentifier>{54279e5e-073c-4396-8d1a-ea17dd359eed}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы ресурсов\Entry">
+      <UniqueIdentifier>{3a2df0ba-2fe2-4c73-bda6-136317944d46}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.h">
@@ -87,6 +90,9 @@
     <ClInclude Include="map_converter.h">
       <Filter>Файлы заголовков\Utility</Filter>
     </ClInclude>
+    <ClInclude Include="map_entry.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp">
@@ -125,10 +131,16 @@
     <ClCompile Include="map_converter.cpp">
       <Filter>Исходные файлы\Utility</Filter>
     </ClCompile>
+    <ClCompile Include="map_entry.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="data\maps\map_0.ini">
       <Filter>Файлы ресурсов\Map</Filter>
+    </None>
+    <None Include="data\entries.ini">
+      <Filter>Файлы ресурсов\Entry</Filter>
     </None>
   </ItemGroup>
 </Project>
