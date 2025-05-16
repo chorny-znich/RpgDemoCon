@@ -27,7 +27,7 @@ void MapManager::loadEntries()
     else {
       newMapEntry.setDirection(EntryDirection::DOWN);
     }
-    mEntries[std::format("entry_{}_{}", newMapEntry.getMapId(), i)] = newMapEntry;
+    mEntries[newMapEntry.getMapId()].push_back(newMapEntry);
   }
 }
 
