@@ -22,5 +22,6 @@ public:
   void setMovingState(bool move);
   bool isMoving() const;
   GameData::Position getPosition() const;
-  void update(GameData::RenderMap& renderMap);
+  void update();
+  void render(GameData::RenderMap& renderMap);
 };

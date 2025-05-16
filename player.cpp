@@ -45,7 +45,7 @@ GameData::Position Player::getPosition() const
   return mPosition;
 }
 
-void Player::update(GameData::RenderMap& renderMap)
+void Player::update()
 {
   // move the player
   mPosition.first += mMovement.first;
@@ -53,5 +53,9 @@ void Player::update(GameData::RenderMap& renderMap)
   mMovement = { 0, 0 };
   mMoving = false;
   // draw a player on the map
+}
+
+void Player::render(GameData::RenderMap& renderMap)
+{
   renderMap[mPosition.second][mPosition.first] = SYMBOL;
 }

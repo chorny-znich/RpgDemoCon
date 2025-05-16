@@ -20,6 +20,7 @@ private:
   void loadEntries();
 public:
   void init();
+  void render(GameData::RenderMap& map);
   Map& getCurrentMap();
 };
 

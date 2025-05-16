@@ -1,6 +1,7 @@
 #include "map_manager.h"
 #include "ini_parser.h"
 #include "game_data.h"
+#include "map_symbols.h"
 #include <format>
 
 
@@ -39,6 +40,18 @@ void MapManager::init()
     mMaps.insert({ i, newMap });
   }
   loadEntries();
+}
+
+/**
+ * @brief Draw a symbol for a ladder
+ * @param map reference to the render map 
+ */
+void MapManager::render(GameData::RenderMap& map)
+{
+  for (const auto& entry : mEntries.at(mCurrentMapIndex)) {
+    char symbol = (entry.getDirection() == EntryDirection::UP) ? MapSymbols::LADDER_UP : MapSymbols::LADDER_DOWN;
+    map[entry.getPosition().second][entry.getPosition().first] = symbol;
+  }
 }
 
 /**

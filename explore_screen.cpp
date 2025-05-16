@@ -71,7 +71,7 @@ void ExploreScreen::update()
     }
 
     mCurrentMap.update();
-    mPlayer.update(mCurrentMap.getRenderMap());
+    mPlayer.update();
     mGameplayState = GameplayState::PLAYER_TURN_SHOW;
   }
 }
@@ -79,6 +79,8 @@ void ExploreScreen::update()
 void ExploreScreen::render()
 {
   if (mGameplayState == GameplayState::PLAYER_TURN_SHOW) {
+    mMapManager.render(mCurrentMap.getRenderMap());
+    mPlayer.render(mCurrentMap.getRenderMap());
     mCurrentMap.render();
     mGameplayState = GameplayState::PLAYER_INPUT;
   }

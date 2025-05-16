@@ -49,6 +49,9 @@
     <Filter Include="Файлы ресурсов\Entry">
       <UniqueIdentifier>{3a2df0ba-2fe2-4c73-bda6-136317944d46}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Data">
+      <UniqueIdentifier>{b981d8b5-7bfd-49b3-a024-861d9d4573ab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.h">
@@ -92,6 +95,9 @@
     </ClInclude>
     <ClInclude Include="map_entry.h">
       <Filter>Файлы заголовков\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="map_symbols.h">
+      <Filter>Файлы заголовков\Data</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

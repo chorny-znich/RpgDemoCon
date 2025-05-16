@@ -139,6 +139,7 @@
     <ClInclude Include="map_converter.h" />
     <ClInclude Include="map_entry.h" />
     <ClInclude Include="map_manager.h" />
+    <ClInclude Include="map_symbols.h" />
     <ClInclude Include="menu_screen.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="screen.h" />
