@@ -91,7 +91,7 @@
       <Filter>Файлы заголовков\Utility</Filter>
     </ClInclude>
     <ClInclude Include="map_entry.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Map</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -20,6 +20,13 @@ void MapManager::loadEntries()
     newMapEntry.setPosition({ std::stoul(section.at("position_x")), std::stoul(section.at("position_y")) });
     newMapEntry.setLinkedEntryId(section.at("linked_entry_id"));
     newMapEntry.setVisibility(std::stoul(section.at("visibility")));
+    std::string entryDirection = section.at("direction");
+    if (entryDirection == "up") {
+      newMapEntry.setDirection(EntryDirection::UP);
+    }
+    else {
+      newMapEntry.setDirection(EntryDirection::DOWN);
+    }
     mEntries[std::format("entry_{}_{}", newMapEntry.getMapId(), i)] = newMapEntry;
   }
 }

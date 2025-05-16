@@ -34,3 +34,13 @@ void MapEntry::setVisibility(size_t visibility)
 {
   mVisibility = visibility;
 }
+
+void MapEntry::setDirection(EntryDirection direction)
+{
+  mDirection = direction;
+}
+
+EntryDirection MapEntry::getDirection() const
+{
+  return mDirection;
+}
