@@ -46,6 +46,11 @@ void MapConverter::saveMap()
           ofs << "objects_layer=wall\n";
           ofs << "passable=0\n";
         }
+        else if (mMapToConvert[i][j] == '/') {
+          ofs << "floor_layer=dirt\n";
+          ofs << "objects_layer=none\n";
+          ofs << "passable=1\n";
+        }
       }
     }
   }

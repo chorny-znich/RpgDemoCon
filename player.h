@@ -13,6 +13,7 @@ private:
   bool mMoving{ false };
   const char SYMBOL = '@';
 public:
+  void spawn(GameData::Position pos);
   void moveWest();
   void moveEast();
   void moveNorth();

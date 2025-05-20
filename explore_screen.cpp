@@ -19,6 +19,20 @@ void ExploreScreen::changeMap()
 {
   // Load a new current map 
   mCurrentMap = mMapManager.getCurrentMap();
+  mPlayer.spawn(mMapManager.getPlayerSpawnPosition());
+  mGameplayState = GameplayState::PLAYER_TURN;
+  system("cls");
+}
+
+/**
+ * @brief Teleport to the next or previous map
+ */
+void ExploreScreen::useLadder()
+{
+  GameData::Position currentPlayerLocation = mPlayer.getPosition();
+  if (mMapManager.useEntry(currentPlayerLocation)) {
+    changeMap();
+  }
 }
 
 void ExploreScreen::init()
@@ -52,6 +66,9 @@ void ExploreScreen::handleInput()
       case 's':
         mPlayer.moveSouth();
         mPlayer.setMovingState(true);
+        break;
+      case 'l':
+        useLadder();
         break;
       }
     }

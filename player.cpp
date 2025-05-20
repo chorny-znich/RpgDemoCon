@@ -1,5 +1,14 @@
 #include "player.h"
 
+/**
+ * @brief Set the start player's position on the map
+ * @param Player's position
+ */
+void Player::spawn(GameData::Position pos)
+{
+  mPosition = pos;
+}
+
 void Player::moveWest()
 {
   mMovement = { -CHAR_STEP, 0 };

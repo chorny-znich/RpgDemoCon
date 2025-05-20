@@ -3,6 +3,8 @@
 #include "game_data.h"
 #include "map_symbols.h"
 #include <format>
+#include <algorithm>
+#include <iostream>
 
 
 /**
@@ -20,6 +22,7 @@ void MapManager::loadEntries()
     newMapEntry.setMapId(std::stoul(section.at("map_id")));
     newMapEntry.setPosition({ std::stoul(section.at("position_x")), std::stoul(section.at("position_y")) });
     newMapEntry.setLinkedEntryId(section.at("linked_entry_id"));
+    newMapEntry.setLinkedMapId(std::stoul(section.at("linked_map_id")));
     newMapEntry.setVisibility(std::stoul(section.at("visibility")));
     std::string entryDirection = section.at("direction");
     if (entryDirection == "up") {
@@ -61,4 +64,45 @@ void MapManager::render(GameData::RenderMap& map)
 Map& MapManager::getCurrentMap()
 {
   return mMaps.at(mCurrentMapIndex);
+}
+
+/**
+ * @brief Find the entry at the player's location and teleport the player to the according map
+ * @param Player location 
+ */
+bool MapManager::useEntry(GameData::Position pos)
+{
+  std::vector<MapEntry>& currentEntries = mEntries.at(mCurrentMapIndex);
+  const auto iter = std::find_if(currentEntries.begin(), currentEntries.end(), [pos](const auto& value) {
+    return pos == value.getPosition();
+    });
+  if (iter != currentEntries.end()) {
+    std::string newEntryId = iter->getLinkedEntryId();
+    size_t newMapId = iter->getLinkedMapId();
+    //std::cout << std::format("entry id is {}\n", newEntryId);
+    //std::cout << std::format("map id is {}\n", newMapId);
+
+    std::vector<MapEntry>& newEntries = mEntries.at(newMapId);
+    const auto newIter = std::find_if(newEntries.begin(), newEntries.end(), [newEntryId](const auto& value) {
+      return newEntryId == value.getId();
+      });
+    if (newIter != newEntries.end()) {
+      mCurrentMapIndex = newIter->getMapId();
+      mPlayerSpawnPosition = newIter->getPosition();
+      //std::cout << std::format("map index is {}\n", mCurrentMapIndex);
+      //std::cout << std::format("player spawn at {},{}\n", mPlayerSpawnPosition.first, mPlayerSpawnPosition.second);
+    }
+    else {
+      return false;
+    }
+  }
+  else {
+    return false;
+  }
+  return true;
+}
+
+GameData::Position MapManager::getPlayerSpawnPosition() const
+{
+  return mPlayerSpawnPosition;
 }

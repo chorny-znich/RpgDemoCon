@@ -10,7 +10,7 @@ enum class EntryDirection
 };
 
 /**
- * @brief 
+ * @brief Location on the map that teloprt player
  */
 class MapEntry
 {
@@ -19,17 +19,21 @@ private:
   size_t mMapId;
   GameData::Position mPosition;
   std::string mLinkedEntryId;
+  size_t mLinkedMapId;
   size_t mVisibility;
   EntryDirection mDirection{ EntryDirection::NONE };
 public:
   void setId(const std::string& id);
+  std::string getId() const;
   void setMapId(size_t id);
   size_t getMapId() const;
   void setPosition(Position pos);
   Position getPosition() const;
   void setLinkedEntryId(const std::string& id);
+  std::string getLinkedEntryId() const;
+  void setLinkedMapId(size_t id);
+  size_t getLinkedMapId() const;
   void setVisibility(size_t visibility);
   void setDirection(EntryDirection direction);
   EntryDirection getDirection() const;
 };
-

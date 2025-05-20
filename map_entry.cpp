@@ -5,6 +5,11 @@ void MapEntry::setId(const std::string& id)
   mId = id;
 }
 
+std::string MapEntry::getId() const
+{
+  return mId;
+}
+
 void MapEntry::setMapId(size_t id)
 {
   mMapId = id;
@@ -28,6 +33,21 @@ Position MapEntry::getPosition() const
 void MapEntry::setLinkedEntryId(const std::string& id)
 {
   mLinkedEntryId = id;
+}
+
+std::string MapEntry::getLinkedEntryId() const
+{
+    return mLinkedEntryId;
+}
+
+void MapEntry::setLinkedMapId(size_t id)
+{
+  mLinkedMapId = id;
+}
+
+size_t MapEntry::getLinkedMapId() const
+{
+  return mLinkedMapId;
 }
 
 void MapEntry::setVisibility(size_t visibility)

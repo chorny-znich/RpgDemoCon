@@ -138,7 +138,7 @@
       <Filter>Исходные файлы\Utility</Filter>
     </ClCompile>
     <ClCompile Include="map_entry.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Map</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

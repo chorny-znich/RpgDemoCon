@@ -12,8 +12,9 @@ using Entries = std::unordered_map <size_t, std::vector<MapEntry>>;
 class MapManager
 {
 private:
-  const size_t NUMBER_OF_MAPS = 1;
+  const size_t NUMBER_OF_MAPS = 3;
   size_t mCurrentMapIndex{ 0 };
+  GameData::Position mPlayerSpawnPosition{ 1, 1 };
   std::unordered_map<size_t, Map> mMaps;
   Entries mEntries;
 
@@ -22,5 +23,6 @@ public:
   void init();
   void render(GameData::RenderMap& map);
   Map& getCurrentMap();
+  bool useEntry(GameData::Position pos);
+  GameData::Position getPlayerSpawnPosition() const;
 };
-

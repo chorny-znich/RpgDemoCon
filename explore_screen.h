@@ -25,6 +25,8 @@ private:
 	bool detectCollision(GameData::Position pos, GameData::Movement move);
 
 	void changeMap();
+
+	void useLadder();
 public:
 	void init() override;
 	void handleInput() override;
