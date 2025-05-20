@@ -9,7 +9,7 @@
 void MenuScreen::showMainMenu()
 {
   std::cout << "\n\n";
-  std::cout << "\t\tRpgDemoConsole ver 0.1.0\n\n";
+  std::cout << "\t\tRpgDemoConsole ver 0.2.0\n\n";
   std::cout << "\t1. Play\n" << "\t2. Create a hero\n" << "\t3. Convert map\n" << "\t4. Exit\n\n";
   std::cout << "\t\tDeveloped by Vargar\n\t\t\t2025";
 }
