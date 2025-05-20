@@ -1,10 +1,11 @@
 #pragma once
+#include "rp_stats.h"
 #include "game_data.h"
 
 /**
  * @brief Player's avatar who can act on the map and have RP statistic
  */
-class Player
+class Player : public RPStats
 {
 private:
   const int CHAR_STEP{ 1 };

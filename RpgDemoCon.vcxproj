@@ -129,6 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="create_player_screen.h" />
     <ClInclude Include="engine.h" />
     <ClInclude Include="explore_screen.h" />
     <ClInclude Include="game_data.h" />
@@ -142,10 +143,12 @@
     <ClInclude Include="map_symbols.h" />
     <ClInclude Include="menu_screen.h" />
     <ClInclude Include="player.h" />
+    <ClInclude Include="rp_stats.h" />
     <ClInclude Include="screen.h" />
     <ClInclude Include="screen_manager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="create_player_screen.cpp" />
     <ClCompile Include="engine.cpp" />
     <ClCompile Include="explore_screen.cpp" />
     <ClCompile Include="game_state.cpp" />
@@ -158,6 +161,7 @@
     <ClCompile Include="map_manager.cpp" />
     <ClCompile Include="menu_screen.cpp" />
     <ClCompile Include="player.cpp" />
+    <ClCompile Include="rp_stats.cpp" />
     <ClCompile Include="screen_manager.cpp" />
   </ItemGroup>
   <ItemGroup>

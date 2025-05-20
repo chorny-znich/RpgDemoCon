@@ -1,5 +1,6 @@
 #include "menu_screen.h"
 #include "explore_screen.h"
+#include "create_player_screen.h"
 #include "screen_manager.h"
 #include "game_state.h"
 #include <string>
@@ -43,7 +44,7 @@ void MenuScreen::createHero()
 {
   system("cls");
   mRenderScreen = true;
-  //ScreenManager::createScreen(GameData::Screens::HERO_CREATION_SCREEN);
+  ScreenManager::createScreen<CreatePlayerScreen>("CREATE_HERO_SCREEN");
 }
 
 void MenuScreen::closeScreen()

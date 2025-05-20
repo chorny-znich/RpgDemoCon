@@ -19,5 +19,6 @@ namespace GameData
   {
     const std::string Map = R"(data/maps/)";
     const std::string Entry = R"(data/entries.ini)";
+    const std::string PlayerInfo = R"(data/player.ini)";
   }
 }
