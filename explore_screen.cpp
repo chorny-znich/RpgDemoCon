@@ -38,6 +38,7 @@ void ExploreScreen::useLadder()
 void ExploreScreen::init()
 {
   mMapManager.init();
+  mPlayer.create();
   changeMap();
 }
 
@@ -89,6 +90,7 @@ void ExploreScreen::update()
 
     mCurrentMap.update();
     mPlayer.update();
+    mConsoleUI.addToHud(UI_Part::PLAYER_INFO, mPlayer.getName(), 0);
     mGameplayState = GameplayState::PLAYER_TURN_SHOW;
   }
 }
@@ -96,6 +98,7 @@ void ExploreScreen::update()
 void ExploreScreen::render()
 {
   if (mGameplayState == GameplayState::PLAYER_TURN_SHOW) {
+    mConsoleUI.display(UI_Part::PLAYER_INFO);
     mMapManager.render(mCurrentMap.getRenderMap());
     mPlayer.render(mCurrentMap.getRenderMap());
     mCurrentMap.render();

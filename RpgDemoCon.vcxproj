@@ -169,6 +169,7 @@
   <ItemGroup>
     <None Include="data\entries.ini" />
     <None Include="data\maps\map_0.ini" />
+    <None Include="data\player.ini" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

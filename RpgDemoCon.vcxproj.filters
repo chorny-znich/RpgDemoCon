@@ -105,14 +105,14 @@
     <ClInclude Include="map_symbols.h">
       <Filter>Файлы заголовков\Data</Filter>
     </ClInclude>
+    <ClInclude Include="console_ui.h">
+      <Filter>Файлы заголовков\UI</Filter>
+    </ClInclude>
     <ClInclude Include="create_player_screen.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Screen</Filter>
     </ClInclude>
     <ClInclude Include="rp_stats.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="console_ui.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -155,14 +155,14 @@
     <ClCompile Include="map_entry.cpp">
       <Filter>Исходные файлы\Map</Filter>
     </ClCompile>
+    <ClCompile Include="console_ui.cpp">
+      <Filter>Исходные файлы\UI</Filter>
+    </ClCompile>
     <ClCompile Include="create_player_screen.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Screen</Filter>
     </ClCompile>
     <ClCompile Include="rp_stats.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="console_ui.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +171,9 @@
     </None>
     <None Include="data\entries.ini">
       <Filter>Файлы ресурсов\Entry</Filter>
+    </None>
+    <None Include="data\player.ini">
+      <Filter>Файлы ресурсов</Filter>
     </None>
   </ItemGroup>
 </Project>

@@ -3,6 +3,7 @@
 #include "map_manager.h"
 #include "map.h"
 #include "player.h"
+#include "console_ui.h"
 
 /**
  * @brief Core screen of the game
@@ -21,6 +22,7 @@ private:
 	Map mCurrentMap;
 	Player mPlayer;
 	GameplayState mGameplayState{ GameplayState::PLAYER_TURN };
+	ConsoleUI mConsoleUI;
 
 	bool detectCollision(GameData::Position pos, GameData::Movement move);
 

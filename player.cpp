@@ -1,4 +1,15 @@
 #include "player.h"
+#include "ini_parser.h"
+
+/**
+ * @brief Load player's attributes from the file
+ */
+void Player::create()
+{
+  dr::IniDocument doc = dr::load(GameData::path::PlayerInfo);
+  dr::Section section = doc.getSection("Player");
+  setName(section.at("Name"));
+}
 
 /**
  * @brief Set the start player's position on the map

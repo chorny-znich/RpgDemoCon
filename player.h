@@ -14,6 +14,7 @@ private:
   bool mMoving{ false };
   const char SYMBOL = '@';
 public:
+  void create();
   void spawn(GameData::Position pos);
   void moveWest();
   void moveEast();
