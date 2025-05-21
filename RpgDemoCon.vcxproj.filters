@@ -58,6 +58,12 @@
     <Filter Include="Исходные файлы\UI">
       <UniqueIdentifier>{28092ce1-a597-483b-910a-23b79efcb9ad}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Object">
+      <UniqueIdentifier>{0a771204-81d3-4b61-8842-28efc0fbb58a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Object">
+      <UniqueIdentifier>{efa9331f-1e5b-401d-9af6-4b59f4bd47bf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.h">
@@ -114,6 +120,12 @@
     <ClInclude Include="rp_stats.h">
       <Filter>Файлы заголовков\Player</Filter>
     </ClInclude>
+    <ClInclude Include="game_object.h">
+      <Filter>Файлы заголовков\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object_type.h">
+      <Filter>Файлы заголовков\Object</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp">
@@ -163,6 +175,9 @@
     </ClCompile>
     <ClCompile Include="rp_stats.cpp">
       <Filter>Исходные файлы\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object.cpp">
+      <Filter>Исходные файлы\Object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
