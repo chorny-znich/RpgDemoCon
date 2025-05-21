@@ -132,6 +132,7 @@
     <ClInclude Include="console_ui.h" />
     <ClInclude Include="create_player_screen.h" />
     <ClInclude Include="engine.h" />
+    <ClInclude Include="engine_utility.h" />
     <ClInclude Include="explore_screen.h" />
     <ClInclude Include="game_data.h" />
     <ClInclude Include="game_object.h" />
@@ -145,6 +146,7 @@
     <ClInclude Include="map_manager.h" />
     <ClInclude Include="map_symbols.h" />
     <ClInclude Include="menu_screen.h" />
+    <ClInclude Include="money.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="rp_stats.h" />
     <ClInclude Include="screen.h" />
@@ -154,6 +156,7 @@
     <ClCompile Include="console_ui.cpp" />
     <ClCompile Include="create_player_screen.cpp" />
     <ClCompile Include="engine.cpp" />
+    <ClCompile Include="engine_utility.cpp" />
     <ClCompile Include="explore_screen.cpp" />
     <ClCompile Include="game_object.cpp" />
     <ClCompile Include="game_state.cpp" />
@@ -165,6 +168,7 @@
     <ClCompile Include="map_entry.cpp" />
     <ClCompile Include="map_manager.cpp" />
     <ClCompile Include="menu_screen.cpp" />
+    <ClCompile Include="money.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="rp_stats.cpp" />
     <ClCompile Include="screen_manager.cpp" />
