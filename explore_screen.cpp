@@ -19,6 +19,8 @@ void ExploreScreen::changeMap()
 {
   // Load a new current map 
   mCurrentMap = mMapManager.getCurrentMap();
+  mObjectManager.createObjects(mMapManager.getCurrentMapIndex());
+  mObjectManager.createRandomObjects(mMapManager.getCurrentMap());
   mPlayer.spawn(mMapManager.getPlayerSpawnPosition());
   mGameplayState = GameplayState::PLAYER_TURN;
   system("cls");
@@ -38,6 +40,7 @@ void ExploreScreen::useLadder()
 void ExploreScreen::init()
 {
   mMapManager.init();
+  mObjectManager.init();
   mPlayer.create();
   changeMap();
 }
@@ -100,6 +103,7 @@ void ExploreScreen::render()
   if (mGameplayState == GameplayState::PLAYER_TURN_SHOW) {
     mConsoleUI.display(UI_Part::PLAYER_INFO);
     mMapManager.render(mCurrentMap.getRenderMap());
+    mObjectManager.render(mCurrentMap.getRenderMap());
     mPlayer.render(mCurrentMap.getRenderMap());
     mCurrentMap.render();
     mGameplayState = GameplayState::PLAYER_INPUT;

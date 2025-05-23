@@ -15,10 +15,13 @@ namespace GameData
   using Position = std::pair<size_t, size_t>;
   using Movement = std::pair<int, int>;
 
+  const size_t NUMBER_OF_MAPS = 3;
+
   inline namespace path
   {
     const std::string Map = R"(data/maps/)";
     const std::string Entry = R"(data/entries.ini)";
     const std::string PlayerInfo = R"(data/player.ini)";
+    const std::string ObjectInfo = R"(data/objects/)";
   }
 }

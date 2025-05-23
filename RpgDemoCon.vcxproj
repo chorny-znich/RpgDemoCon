@@ -147,7 +147,9 @@
     <ClInclude Include="map_symbols.h" />
     <ClInclude Include="menu_screen.h" />
     <ClInclude Include="money.h" />
+    <ClInclude Include="object_manager.h" />
     <ClInclude Include="player.h" />
+    <ClInclude Include="random_placement.h" />
     <ClInclude Include="rp_stats.h" />
     <ClInclude Include="screen.h" />
     <ClInclude Include="screen_manager.h" />
@@ -169,13 +171,16 @@
     <ClCompile Include="map_manager.cpp" />
     <ClCompile Include="menu_screen.cpp" />
     <ClCompile Include="money.cpp" />
+    <ClCompile Include="object_manager.cpp" />
     <ClCompile Include="player.cpp" />
+    <ClCompile Include="random_placement.cpp" />
     <ClCompile Include="rp_stats.cpp" />
     <ClCompile Include="screen_manager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="data\entries.ini" />
     <None Include="data\maps\map_0.ini" />
+    <None Include="data\objects\objects_0.ini" />
     <None Include="data\player.ini" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

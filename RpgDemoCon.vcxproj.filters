@@ -64,6 +64,9 @@
     <Filter Include="Исходные файлы\Object">
       <UniqueIdentifier>{efa9331f-1e5b-401d-9af6-4b59f4bd47bf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы ресурсов\Object">
+      <UniqueIdentifier>{73f53755-a5f3-4121-969d-fd21644bc37b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.h">
@@ -132,6 +135,12 @@
     <ClInclude Include="engine_utility.h">
       <Filter>Файлы заголовков\Utility</Filter>
     </ClInclude>
+    <ClInclude Include="object_manager.h">
+      <Filter>Файлы заголовков\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="random_placement.h">
+      <Filter>Файлы заголовков\Utility</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp">
@@ -191,6 +200,12 @@
     <ClCompile Include="engine_utility.cpp">
       <Filter>Исходные файлы\Utility</Filter>
     </ClCompile>
+    <ClCompile Include="object_manager.cpp">
+      <Filter>Исходные файлы\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="random_placement.cpp">
+      <Filter>Исходные файлы\Utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="data\maps\map_0.ini">
@@ -201,6 +216,9 @@
     </None>
     <None Include="data\player.ini">
       <Filter>Файлы ресурсов</Filter>
+    </None>
+    <None Include="data\objects\objects_0.ini">
+      <Filter>Файлы ресурсов\Object</Filter>
     </None>
   </ItemGroup>
 </Project>

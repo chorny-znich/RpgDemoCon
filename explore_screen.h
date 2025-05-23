@@ -1,6 +1,7 @@
 #pragma once
 #include "screen.h"
 #include "map_manager.h"
+#include "object_manager.h"
 #include "map.h"
 #include "player.h"
 #include "console_ui.h"
@@ -19,6 +20,7 @@ private:
 	};
 private:
 	MapManager mMapManager;
+	ObjectManager mObjectManager;
 	Map mCurrentMap;
 	Player mPlayer;
 	GameplayState mGameplayState{ GameplayState::PLAYER_TURN };

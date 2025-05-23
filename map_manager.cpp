@@ -57,6 +57,11 @@ void MapManager::render(GameData::RenderMap& map)
   }
 }
 
+size_t MapManager::getCurrentMapIndex() const
+{
+    return mCurrentMapIndex;
+}
+
 /**
  * @brief Return the reference to map according the index of the current map
  * @return reference to map

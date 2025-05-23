@@ -22,6 +22,7 @@ private:
 public:
   void init();
   void render(GameData::RenderMap& map);
+  size_t getCurrentMapIndex() const;
   Map& getCurrentMap();
   bool useEntry(GameData::Position pos);
   GameData::Position getPlayerSpawnPosition() const;
