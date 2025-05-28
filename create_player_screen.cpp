@@ -20,9 +20,9 @@ void CreatePlayerScreen::showScreen()
   std::cout << std::format("Number of points to distribute is {}\n\n", mStatsPoints);
   std::cout << "Primary stats:\n";
   showPrimaryStats();
-  //mPlayer.showSecondaryStats();
+  mPlayer.showSecondaryStats();
   //mPlayer.showSkills();
-  //std::cout << "\nNavigate between stats with 'w' and 's' keys.\nPress 'a' to decrease stat's value and 'd' to increase it.\n";
+  std::cout << "\nNavigate between stats with 'w' and 's' keys.\nPress 'a' to decrease stat's value and 'd' to increase it.\n";
   std::cout << "Press 'Space' when you distribute all stats points.\n";
 }
 

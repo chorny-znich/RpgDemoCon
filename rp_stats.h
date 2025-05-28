@@ -13,6 +13,14 @@ const std::vector<std::string> PrimaryStatsList{
 	"Intellect",
 	"Charisma" 
 };
+const std::vector<std::string> SecondaryStatsList{
+	"Attack",
+	"Ranged attack",
+	"Defence",
+	"Attention",
+	"Reaction", 
+	"Energy"
+};
 /**
  * @brief Role-play statistics for all entities
  */
@@ -28,6 +36,14 @@ protected:
 		{PrimaryStatsList[4], 1},
 		{PrimaryStatsList[5], 1}
 	};
+	std::unordered_map<std::string, size_t> mSecondaryStats{
+		{SecondaryStatsList[0], 1},
+		{SecondaryStatsList[1], 1},
+		{SecondaryStatsList[2], 1},
+		{SecondaryStatsList[3], 1},
+		{SecondaryStatsList[4], 1},
+		{SecondaryStatsList[5], 1}
+	};
 public:
   void setName(const std::string& name);
   const std::string& getName() const;
@@ -37,4 +53,8 @@ public:
 	void decreasePrimaryStat(const std::string& str);
 	size_t getPrimaryStatValue(const std::string& str);
 	//void showPrimaryStats() const;
+	// Secondary stats
+	void setSecondaryStatValue(const std::string& str, size_t value);
+	size_t getSecondaryStatValue(const std::string& str) const;
+	void showSecondaryStats() const;
 };
