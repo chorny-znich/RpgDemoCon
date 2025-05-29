@@ -46,3 +46,15 @@ void RPStats::showSecondaryStats() const
 	}
 	std::cout << "\n";
 }
+
+const std::string RPStats::showSkills()
+{
+	std::string result{};
+	result.append("Skills:\n");
+	for (const auto& [skill, value] : mSkills) {
+		result.append(std::format("  {} -- {}\n", skill, value));
+	}
+	result.append("\n");
+
+	return result;
+}

@@ -21,6 +21,12 @@ const std::vector<std::string> SecondaryStatsList{
 	"Reaction", 
 	"Energy"
 };
+const std::vector<std::string> SkillsList{
+		"Search",
+		"Athletic",
+		"Dodge",
+		"Deft hands"
+};
 /**
  * @brief Role-play statistics for all entities
  */
@@ -44,6 +50,12 @@ protected:
 		{SecondaryStatsList[4], 1},
 		{SecondaryStatsList[5], 1}
 	};
+	std::unordered_map<std::string, size_t> mSkills{
+		{SkillsList[0], 0},
+		{SkillsList[1], 0},
+		{SkillsList[2], 0},
+		{SkillsList[3], 0}
+	};
 public:
   void setName(const std::string& name);
   const std::string& getName() const;
@@ -57,4 +69,6 @@ public:
 	void setSecondaryStatValue(const std::string& str, size_t value);
 	size_t getSecondaryStatValue(const std::string& str) const;
 	void showSecondaryStats() const;
+	// skills
+	const std::string showSkills();
 };
