@@ -11,6 +11,31 @@ const std::string& RPStats::getName() const
 	return mName;
 }
 
+void RPStats::setMoney(size_t money)
+{
+	mMoney = money;
+}
+
+void RPStats::increaseMoney(size_t money)
+{
+	mMoney += money;
+}
+
+void RPStats::decreaseMoney(size_t money)
+{
+	mMoney = (money > mMoney) ? 0 : mMoney - money;
+}
+
+size_t RPStats::getMoney() const
+{
+	return mMoney;
+}
+
+size_t& RPStats::getMoney()
+{
+	return mMoney;
+}
+
 void RPStats::increasePrimaryStat(const std::string& str)
 {
 	mPrimaryStats[str] += 1;

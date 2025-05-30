@@ -34,6 +34,8 @@ class RPStats
 {
 protected:
   std::string mName{};
+	std::size_t mMoney{ 0 };
+
 	std::unordered_map<std::string, size_t> mPrimaryStats{
 		{PrimaryStatsList[0], 1},
 		{PrimaryStatsList[1], 1},
@@ -59,6 +61,11 @@ protected:
 public:
   void setName(const std::string& name);
   const std::string& getName() const;
+	void setMoney(size_t money);
+	void increaseMoney(size_t money);
+	void decreaseMoney(size_t money);
+	size_t getMoney() const;
+	size_t& getMoney();
 
 	// Primary stats
 	void increasePrimaryStat(const std::string& str);

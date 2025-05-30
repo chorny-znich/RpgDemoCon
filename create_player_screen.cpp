@@ -50,6 +50,7 @@ void CreatePlayerScreen::createPlayer()
   if (ofs) {
     ofs << "[Player]\n";
     ofs << "Name=" << mPlayer.getName() << "\n";
+    ofs << "Money=" << mPlayer.getMoney() << "\n\n";
     ofs << "[Primary stats]\n";
     for (const auto& stat : PrimaryStatsList) {
       ofs << stat << "=" << mPlayer.getPrimaryStatValue(stat) << "\n";
