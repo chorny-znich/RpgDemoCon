@@ -36,18 +36,21 @@ size_t RPStats::getSecondaryStatValue(const std::string& str) const
 	return mSecondaryStats.at(str);
 }
 
-void RPStats::showSecondaryStats() const
+const std::string RPStats::showSecondaryStats() const
 {
-	std::cout << "Secondary stats:\n";
+	std::string result{};
+	result.append("Secondary stats:\n");
 	//std::cout << std::format("  Money - {}\n", getMoney());
 	//std::cout << std::format("  Health - {}\n", getMaxHealth());
 	for (const auto& stat : mSecondaryStats) {
-		std::cout << std::format("  {} - {}\n", stat.first, stat.second);
+		result.append(std::format("  {} - {}\n", stat.first, stat.second));
 	}
-	std::cout << "\n";
+	result.append("\n");
+
+	return result;
 }
 
-const std::string RPStats::showSkills()
+const std::string RPStats::showSkills() const
 {
 	std::string result{};
 	result.append("Skills:\n");

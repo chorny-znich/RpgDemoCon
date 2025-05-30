@@ -68,7 +68,7 @@ public:
 	// Secondary stats
 	void setSecondaryStatValue(const std::string& str, size_t value);
 	size_t getSecondaryStatValue(const std::string& str) const;
-	void showSecondaryStats() const;
+	const std::string showSecondaryStats() const;
 	// skills
-	const std::string showSkills();
+	const std::string showSkills() const;
 };
