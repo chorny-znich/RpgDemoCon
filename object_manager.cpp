@@ -6,6 +6,7 @@
 #include <string>
 #include <format>
 #include <iostream>
+#include <algorithm>
 
 void ObjectManager::init()
 {
@@ -69,4 +70,34 @@ void ObjectManager::createRandomObjects(Map& map)
     item->setPosition({ iter->first, iter->second });
     iter++;
   }
+}
+
+/**
+ * @brief find the object at the current position
+ * @param  position on the map
+ * @return shared_ptr to objects or nullptr if there is no object in this location 
+ */
+std::shared_ptr<GameObject> ObjectManager::getObject(GameData::Position pos)
+{
+  auto iter = std::find_if(mObjects.begin(), mObjects.end(), [pos](const auto& obj) {
+    return obj->getPosition() == pos;
+    });
+  if (iter != mObjects.end()) {
+    return *iter;
+  }
+  else {
+    return nullptr;
+  }
+}
+
+/**
+ * @brief Delete the object at the current position
+ * @param pos - position on the map 
+ */
+void ObjectManager::deleteObject(GameData::Position pos)
+{
+  auto iter = std::find_if(mObjects.begin(), mObjects.end(), [pos](const auto& obj) {
+    return pos == obj->getPosition();
+    });
+  mObjects.erase(iter);
 }

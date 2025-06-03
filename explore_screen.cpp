@@ -1,6 +1,10 @@
 #include "explore_screen.h"
 #include "game_state.h"
+#include "money.h"
 #include <conio.h>
+
+#include <iostream>
+#include <format>
 
 bool ExploreScreen::detectCollision(GameData::Position pos, GameData::Movement move)
 {
@@ -34,6 +38,26 @@ void ExploreScreen::useLadder()
   GameData::Position currentPlayerLocation = mPlayer.getPosition();
   if (mMapManager.useEntry(currentPlayerLocation)) {
     changeMap();
+  }
+}
+
+/**
+ * @brief Pick a game object
+ */
+void ExploreScreen::pickItem()
+{
+  GameData::Position currentPlayerLocation = mPlayer.getPosition();
+  std::shared_ptr<GameObject> pObject{ nullptr };
+  if (pObject = mObjectManager.getObject(currentPlayerLocation)) {
+    if (pObject->getType() == GameObjectType::MONEY) {
+      auto pMoneyObject = std::static_pointer_cast<Money>(pObject);
+      mPlayer.increaseMoney(pMoneyObject->getAmount());
+      mConsoleUI.addToHud(UI_Part::LOCATION_INFO, std::format("You pick up ${}", pMoneyObject->getAmount()), 1);
+      mObjectManager.deleteObject(currentPlayerLocation);
+    }
+  }
+  else {
+    std::cout << "money isn't here\n";
   }
 }
 
@@ -74,6 +98,9 @@ void ExploreScreen::handleInput()
       case 'l':
         useLadder();
         break;
+      case 'p':
+        pickItem();
+        break;
       }
     }
     mGameplayState = GameplayState::PLAYER_TURN;
@@ -93,7 +120,7 @@ void ExploreScreen::update()
 
     mCurrentMap.update();
     mPlayer.update();
-    mConsoleUI.addToHud(UI_Part::PLAYER_INFO, mPlayer.getName(), 0);
+    mConsoleUI.addToHud(UI_Part::PLAYER_INFO, std::format("Name: {} ${}", mPlayer.getName(), mPlayer.getMoney()), 0);
     mGameplayState = GameplayState::PLAYER_TURN_SHOW;
   }
 }

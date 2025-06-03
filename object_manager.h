@@ -20,4 +20,6 @@ public:
   void render(GameData::RenderMap& map);
   void createObjects(size_t currentMapIndex);
   void createRandomObjects(Map& map);
+  std::shared_ptr<GameObject> getObject(GameData::Position);
+  void deleteObject(GameData::Position pos);
 };

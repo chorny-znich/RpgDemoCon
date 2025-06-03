@@ -31,6 +31,7 @@ private:
 	void changeMap();
 
 	void useLadder();
+	void pickItem();
 public:
 	void init() override;
 	void handleInput() override;
