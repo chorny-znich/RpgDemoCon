@@ -73,6 +73,23 @@ void ObjectManager::createRandomObjects(Map& map)
 }
 
 /**
+ * @brief Save the set of objects fir the current map to the object's database
+ */
+void ObjectManager::updateObjects(size_t currentMapIndex)
+{
+  mObjectsDatabase[currentMapIndex] = mObjects;
+}
+
+/**
+ * @brief Change the list of objects for the current map
+ * @param index  - index of the current map
+ */
+void ObjectManager::changeObjects(size_t index)
+{
+  mObjects = mObjectsDatabase.at(index);
+}
+
+/**
  * @brief find the object at the current position
  * @param  position on the map
  * @return shared_ptr to objects or nullptr if there is no object in this location 

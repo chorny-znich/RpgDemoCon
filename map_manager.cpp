@@ -57,6 +57,11 @@ void MapManager::render(GameData::RenderMap& map)
   }
 }
 
+size_t MapManager::getPrevMapIndex() const
+{
+  return mPrevMapIndex;
+}
+
 size_t MapManager::getCurrentMapIndex() const
 {
     return mCurrentMapIndex;
@@ -110,4 +115,15 @@ bool MapManager::useEntry(GameData::Position pos)
 GameData::Position MapManager::getPlayerSpawnPosition() const
 {
   return mPlayerSpawnPosition;
+}
+
+void MapManager::setVisited()
+{
+  mVisitedMaps.emplace(mPrevMapIndex);
+  mPrevMapIndex = mCurrentMapIndex;
+}
+
+bool MapManager::isVisited() const
+{
+  return mVisitedMaps.find(mPrevMapIndex) != mVisitedMaps.end() ? true : false;
 }

@@ -21,10 +21,15 @@ bool ExploreScreen::detectCollision(GameData::Position pos, GameData::Movement m
  */
 void ExploreScreen::changeMap()
 {
-  // Load a new current map 
   mCurrentMap = mMapManager.getCurrentMap();
-  mObjectManager.createObjects(mMapManager.getCurrentMapIndex());
-  mObjectManager.createRandomObjects(mMapManager.getCurrentMap());
+  if (mMapManager.isVisited()) {
+    mObjectManager.changeObjects(mMapManager.getCurrentMapIndex());
+  }
+  else {
+    // Create a map from the given index from the ini file 
+    mObjectManager.createObjects(mMapManager.getCurrentMapIndex());
+    mObjectManager.createRandomObjects(mMapManager.getCurrentMap());
+  }
   mPlayer.spawn(mMapManager.getPlayerSpawnPosition());
   mGameplayState = GameplayState::PLAYER_TURN;
   system("cls");
@@ -37,6 +42,8 @@ void ExploreScreen::useLadder()
 {
   GameData::Position currentPlayerLocation = mPlayer.getPosition();
   if (mMapManager.useEntry(currentPlayerLocation)) {
+    mObjectManager.updateObjects(mMapManager.getPrevMapIndex());
+    mMapManager.setVisited();
     changeMap();
   }
 }
