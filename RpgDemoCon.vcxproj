@@ -133,6 +133,7 @@
     <ClInclude Include="create_player_screen.h" />
     <ClInclude Include="engine.h" />
     <ClInclude Include="engine_utility.h" />
+    <ClInclude Include="entity.h" />
     <ClInclude Include="explore_screen.h" />
     <ClInclude Include="game_data.h" />
     <ClInclude Include="game_object.h" />
@@ -159,6 +160,7 @@
     <ClCompile Include="create_player_screen.cpp" />
     <ClCompile Include="engine.cpp" />
     <ClCompile Include="engine_utility.cpp" />
+    <ClCompile Include="entity.cpp" />
     <ClCompile Include="explore_screen.cpp" />
     <ClCompile Include="game_object.cpp" />
     <ClCompile Include="game_state.cpp" />

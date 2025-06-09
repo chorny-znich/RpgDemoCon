@@ -24,4 +24,31 @@ namespace GameData
     const std::string PlayerInfo = R"(data/player.ini)";
     const std::string ObjectInfo = R"(data/objects/)";
   }
+
+  /**
+   * @brief Directions on the map
+   */
+  enum class Direction {
+    CURRENT,
+    NORTH,
+    EAST,
+    SOUTH,
+    WEST
+  };
+
+  enum class EnvironmentType
+  {
+    NONE,
+    ENTRY,
+    PLAYER,
+    ENEMY,
+    OBJECT,
+    NPC
+  };
+
+  struct EntityEnvironment
+  {
+    bool mPassability{false};
+    EnvironmentType mEnvironmentType{ EnvironmentType::NONE };
+  };
 }

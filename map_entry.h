@@ -28,7 +28,7 @@ public:
   void setMapId(size_t id);
   size_t getMapId() const;
   void setPosition(Position pos);
-  Position getPosition() const;
+  GameData::Position getPosition() const;
   void setLinkedEntryId(const std::string& id);
   std::string getLinkedEntryId() const;
   void setLinkedMapId(size_t id);

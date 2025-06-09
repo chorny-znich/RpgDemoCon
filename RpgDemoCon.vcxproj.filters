@@ -67,6 +67,12 @@
     <Filter Include="Файлы ресурсов\Object">
       <UniqueIdentifier>{73f53755-a5f3-4121-969d-fd21644bc37b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Entity">
+      <UniqueIdentifier>{9da71ed4-1fc4-4c86-875e-50a326267906}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Entity">
+      <UniqueIdentifier>{5fa0731a-7867-4278-bd2b-134cd3049833}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.h">
@@ -141,6 +147,9 @@
     <ClInclude Include="random_placement.h">
       <Filter>Файлы заголовков\Utility</Filter>
     </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>Файлы заголовков\Entity</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp">
@@ -205,6 +214,9 @@
     </ClCompile>
     <ClCompile Include="random_placement.cpp">
       <Filter>Исходные файлы\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="entity.cpp">
+      <Filter>Исходные файлы\Entity</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

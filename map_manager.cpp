@@ -127,3 +127,11 @@ bool MapManager::isVisited() const
 {
   return mVisitedMaps.find(mPrevMapIndex) != mVisitedMaps.end() ? true : false;
 }
+
+bool MapManager::isEntry(GameData::Position pos) const
+{
+  auto iter = std::find_if(mEntries.at(mCurrentMapIndex).begin(), mEntries.at(mCurrentMapIndex).end(), [pos](const auto& entry) {
+    return entry.getPosition() == pos;
+    });
+  return iter != mEntries.at(mCurrentMapIndex).end() ? true : false;
+}

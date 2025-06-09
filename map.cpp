@@ -71,6 +71,11 @@ GameData::Size Map::getMapSize() const
   return mMapSize;
 }
 
+Location& Map::getCurrentLocation(GameData::Position pos)
+{
+  return mLocationMap.at(pos.second * getMapSize().first + pos.first);
+}
+
 void Map::update()
 {
   createRenderMap();

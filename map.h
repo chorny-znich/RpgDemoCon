@@ -21,6 +21,7 @@ public:
   GameData::LocationMap& getMap();
   GameData::RenderMap& getRenderMap();
   GameData::Size getMapSize() const;
+  Location& getCurrentLocation(GameData::Position pos);
   void update();
   void render();
 };

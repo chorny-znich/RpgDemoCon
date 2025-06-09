@@ -127,6 +127,7 @@ void ExploreScreen::update()
 
     mCurrentMap.update();
     mPlayer.update();
+    mPlayer.checkEnvironment(mCurrentMap, mMapManager, mObjectManager);
     mConsoleUI.addToHud(UI_Part::PLAYER_INFO, std::format("Name: {} ${}", mPlayer.getName(), mPlayer.getMoney()), 0);
     mGameplayState = GameplayState::PLAYER_TURN_SHOW;
   }

@@ -33,4 +33,5 @@ public:
 
   void setVisited();
   bool isVisited() const;
+  bool isEntry(GameData::Position) const;
 };
