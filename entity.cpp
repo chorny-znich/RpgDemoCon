@@ -19,17 +19,36 @@ void Entity::spawn(GameData::Position pos)
  */
 void Entity::checkEnvironment(Map& map, MapManager& mapManager, ObjectManager& objects)
 {
-  GameData::EntityEnvironment entityEnvironment;
-  if (map.getCurrentLocation(mPosition).isPassable()) {
-    entityEnvironment.mPassability = true;
+  for (auto& [key, value] : mEntityEnvironment) {
+    GameData::Position pos{ mPosition.first + DirectionWithCoords[key].first,
+      mPosition.second + DirectionWithCoords[key].second };
+    value.push_back(checkTile(pos, map, mapManager, objects));
   }
-  if (mapManager.isEntry(mPosition)) {
-    entityEnvironment.mEnvironmentType = GameData::EnvironmentType::ENTRY;
+
+  mEntityEnvironment[GameData::Direction::CURRENT].push_back(checkTile(mPosition, map, mapManager, objects));
+}
+
+/**
+ * @brief 
+ * @param pos - tile's coordinates
+ * @param map - reference to the current map
+ * @param mapManager - reference to the current map objects
+ * @param objects 
+ * @return object with information about tile's environment
+ */
+GameData::TileEnvironment Entity::checkTile(GameData::Position pos, Map& map, MapManager& mapManager, ObjectManager& objects)
+{
+  GameData::TileEnvironment tileEnvironment;
+  if (map.getCurrentLocation(pos).isPassable()) {
+    tileEnvironment.mPassability = true;
   }
-  else if (objects.getObject(mPosition)) {
-    entityEnvironment.mEnvironmentType = GameData::EnvironmentType::OBJECT;
+  if (mapManager.isEntry(pos)) {
+    tileEnvironment.mEnvironmentType = GameData::EnvironmentType::ENTRY;
   }
-  mEntityEnvironment[GameData::Direction::CURRENT].push_back(std::move(entityEnvironment));
+  else if (objects.getObject(pos)) {
+    tileEnvironment.mEnvironmentType = GameData::EnvironmentType::OBJECT;
+  }
+  return tileEnvironment;
 }
 
 /**

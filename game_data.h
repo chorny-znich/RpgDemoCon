@@ -2,6 +2,7 @@
 #include "location.h"
 #include <string>
 #include <vector>
+#include <map>
 
 /**
  * @brief Game metadata
@@ -46,7 +47,7 @@ namespace GameData
     NPC
   };
 
-  struct EntityEnvironment
+  struct TileEnvironment
   {
     bool mPassability{false};
     EnvironmentType mEnvironmentType{ EnvironmentType::NONE };

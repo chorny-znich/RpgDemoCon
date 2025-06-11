@@ -15,10 +15,16 @@ void ObjectManager::init()
   }
 }
 
+/**
+ * @brief Render visible objects to the map
+ * @param map - reference to the map (a string array)
+ */
 void ObjectManager::render(GameData::RenderMap& map)
 {
   for (const auto& obj : mObjects) {
-    map[obj->getPosition().second][obj->getPosition().first] = obj->getImage();
+    if (obj->isVisible()) {
+      map[obj->getPosition().second][obj->getPosition().first] = obj->getImage();
+    }
   }
 }
 
