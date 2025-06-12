@@ -1,4 +1,7 @@
 #include "rp_stats.h"
+#include "game_data.h"
+#include "engine_utility.h"
+#include "check_result.h"
 #include <iostream>
 #include <format>
 
@@ -72,6 +75,17 @@ const std::string RPStats::showSecondaryStats() const
 	}
 	result.append("\n");
 
+	return result;
+}
+
+CheckResult RPStats::checkSecondaryStat(const std::string& name, int value) const
+{
+	CheckResult result;
+	size_t randomValue = dr::EngineUtility::getRandomInRange(GameData::DICE.first, GameData::DICE.second);
+	mConsoleUI.addToHud(UI_Type::GAME_LOG, std::format("Search Skill:{} Dice:{} Value to check:{} ???\n",
+		mPlayer.getSecondaryStatValue("Attention"),
+		randomValue, value), 0);
+	return (mPlayer.getSecondaryStatValue("Attention") + randomValue >= value) ? true : false;
 	return result;
 }
 

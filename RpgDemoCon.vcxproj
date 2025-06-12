@@ -129,6 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="check_result.h" />
     <ClInclude Include="console_ui.h" />
     <ClInclude Include="create_player_screen.h" />
     <ClInclude Include="engine.h" />
@@ -156,6 +157,7 @@
     <ClInclude Include="screen_manager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="check_result.cpp" />
     <ClCompile Include="console_ui.cpp" />
     <ClCompile Include="create_player_screen.cpp" />
     <ClCompile Include="engine.cpp" />

@@ -58,6 +58,7 @@ protected:
 		{SkillsList[2], 0},
 		{SkillsList[3], 0}
 	};
+
 public:
   void setName(const std::string& name);
   const std::string& getName() const;
@@ -76,6 +77,7 @@ public:
 	void setSecondaryStatValue(const std::string& str, size_t value);
 	size_t getSecondaryStatValue(const std::string& str) const;
 	const std::string showSecondaryStats() const;
+	bool checkSecondaryStat(const std::string& name, int value) const;
 	// skills
 	const std::string showSkills() const;
 };

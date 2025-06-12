@@ -6,6 +6,8 @@
 #include "player.h"
 #include "console_ui.h"
 
+#include <vector>
+
 /**
  * @brief Core screen of the game
  */
@@ -27,6 +29,7 @@ private:
 	ConsoleUI mConsoleUI;
 
 	bool detectCollision(GameData::Position pos, GameData::Movement move);
+	void checkVisibility(std::vector<GameData::Position> pos);
 
 	void changeMap();
 

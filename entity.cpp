@@ -19,13 +19,13 @@ void Entity::spawn(GameData::Position pos)
  */
 void Entity::checkEnvironment(Map& map, MapManager& mapManager, ObjectManager& objects)
 {
+  
   for (auto& [key, value] : mEntityEnvironment) {
+    value.clear();
     GameData::Position pos{ mPosition.first + DirectionWithCoords[key].first,
       mPosition.second + DirectionWithCoords[key].second };
     value.push_back(checkTile(pos, map, mapManager, objects));
   }
-
-  mEntityEnvironment[GameData::Direction::CURRENT].push_back(checkTile(mPosition, map, mapManager, objects));
 }
 
 /**
@@ -39,6 +39,7 @@ void Entity::checkEnvironment(Map& map, MapManager& mapManager, ObjectManager& o
 GameData::TileEnvironment Entity::checkTile(GameData::Position pos, Map& map, MapManager& mapManager, ObjectManager& objects)
 {
   GameData::TileEnvironment tileEnvironment;
+  tileEnvironment.mPosition = pos;
   if (map.getCurrentLocation(pos).isPassable()) {
     tileEnvironment.mPassability = true;
   }
@@ -49,6 +50,23 @@ GameData::TileEnvironment Entity::checkTile(GameData::Position pos, Map& map, Ma
     tileEnvironment.mEnvironmentType = GameData::EnvironmentType::OBJECT;
   }
   return tileEnvironment;
+}
+
+/**
+ * @brief Search player's environment for objects
+ * @return Coordinates of objects in the player's field of sight 
+ */
+std::vector<GameData::Position> Entity::getObjectInEnvironment() const
+{
+  std::vector<GameData::Position> result;
+  for (auto& [key, value] : mEntityEnvironment) {
+    for (const auto& tile : value) {
+      if (tile.mEnvironmentType == GameData::EnvironmentType::OBJECT) {
+        result.push_back(tile.mPosition);
+      }
+    }
+  }
+  return result;
 }
 
 /**

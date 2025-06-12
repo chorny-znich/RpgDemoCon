@@ -49,7 +49,10 @@ namespace GameData
 
   struct TileEnvironment
   {
+    Position mPosition;
     bool mPassability{false};
     EnvironmentType mEnvironmentType{ EnvironmentType::NONE };
   };
+
+  std::pair<size_t, size_t> DICE{ 1, 12 };
 }

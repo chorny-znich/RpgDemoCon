@@ -21,9 +21,9 @@ private:
   {
     {GameData::Direction::CURRENT, {0, 0}},
     {GameData::Direction::NORTH, {0, -1}},
-    {GameData::Direction::EAST, {-1, 0}},
+    {GameData::Direction::EAST, {1, 0}},
     {GameData::Direction::SOUTH, {0, 1}},
-    {GameData::Direction::WEST, {1, 0}}
+    {GameData::Direction::WEST, {-1, 0}}
   };
 
   bool mActive{ true };
@@ -44,6 +44,7 @@ public:
   void spawn(GameData::Position pos);
   void checkEnvironment(Map& map, MapManager& mapManager, ObjectManager& objects);
   GameData::TileEnvironment checkTile(GameData::Position pos, Map& map, MapManager& mapManager, ObjectManager& objects);
+  std::vector<GameData::Position> getObjectInEnvironment() const;
   void setActiveStatus(bool status);
   bool isActive() const;
   GameData::Position getPosition() const;

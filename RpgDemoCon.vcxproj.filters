@@ -150,6 +150,9 @@
     <ClInclude Include="entity.h">
       <Filter>Файлы заголовков\Entity</Filter>
     </ClInclude>
+    <ClInclude Include="check_result.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp">
@@ -217,6 +220,9 @@
     </ClCompile>
     <ClCompile Include="entity.cpp">
       <Filter>Исходные файлы\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="check_result.cpp">
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

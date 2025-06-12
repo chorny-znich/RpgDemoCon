@@ -17,6 +17,20 @@ bool ExploreScreen::detectCollision(GameData::Position pos, GameData::Movement m
 }
 
 /**
+ * @brief Check for the invisible objects if the player can see them
+ */
+void ExploreScreen::checkVisibility(std::vector<GameData::Position> pos)
+{
+  for (auto& value : pos) {
+    auto obj = mObjectManager.getObject(value);
+    if (!obj->isVisible() && mPlayer.checkSecondaryStat("Attention", obj->getVisibility()) {
+      obj->setVisibility(true);
+    }
+  }
+  //std::cout << std::format("Objects for check: {}\n", pos.size());
+}
+
+/**
  * @brief Change game's map after starting the game or switch between maps during the game  
  */
 void ExploreScreen::changeMap()
@@ -128,6 +142,7 @@ void ExploreScreen::update()
     mCurrentMap.update();
     mPlayer.update();
     mPlayer.checkEnvironment(mCurrentMap, mMapManager, mObjectManager);
+    checkVisibility(mPlayer.getObjectInEnvironment());
     mConsoleUI.addToHud(UI_Part::PLAYER_INFO, std::format("Name: {} ${}", mPlayer.getName(), mPlayer.getMoney()), 0);
     mGameplayState = GameplayState::PLAYER_TURN_SHOW;
   }
