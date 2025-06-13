@@ -27,7 +27,7 @@ void ConsoleUI::addToHud(UI_Part part, std::string str, size_t line)
     //mLocationInfo.at(line) = std::move(str);
     break;
   case UI_Part::GAME_LOG:
-    //mGameLog.at(line) = std::move(str);
+    mGameLog.at(line) = std::move(str);
     break;
   }
 }
@@ -47,13 +47,30 @@ void ConsoleUI::display(UI_Part type)
     //arrayToPrint = mLocationInfo;
     break;
   case UI_Part::GAME_LOG:
-    //arrayToPrint = mGameLog;
+    arrayToPrint = mGameLog;
     break;
   }
 
-  showDivider('=', 25);
+  showDivider('=', DIVIDER_LENGTH);
   for (const auto& str : arrayToPrint) {
     std::cout << str << '\n';
   }
-  showDivider('=', 25);
+  showDivider('=', DIVIDER_LENGTH);
+}
+
+void ConsoleUI::clear(UI_Part type)
+{
+  switch (type) {
+  case UI_Part::PLAYER_INFO:
+    mPlayerInfo = {};
+    break;
+  case UI_Part::LOCATION_INFO:
+    //arrayToPrint = mLocationInfo;
+    break;
+  case UI_Part::GAME_LOG:
+    for (auto& str : mGameLog) {
+      str = std::string(DIVIDER_LENGTH, ' ');
+    }
+    break;
+  }
 }

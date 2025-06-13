@@ -1,9 +1,12 @@
 #pragma once
+#include "check_result.h"
 #include <string>
 #include <vector>
 #include <unordered_map>
 
 const size_t START_STATS_POINTS = 24;	// Number of stats points to distrubute when creating a hero
+// Modifiers
+const float ATTENTION_MODIFIER = 0.5;
 
 const std::vector<std::string> PrimaryStatsList{
 	"Strength", 
@@ -27,6 +30,7 @@ const std::vector<std::string> SkillsList{
 		"Dodge",
 		"Deft hands"
 };
+
 /**
  * @brief Role-play statistics for all entities
  */
@@ -77,7 +81,10 @@ public:
 	void setSecondaryStatValue(const std::string& str, size_t value);
 	size_t getSecondaryStatValue(const std::string& str) const;
 	const std::string showSecondaryStats() const;
-	bool checkSecondaryStat(const std::string& name, int value) const;
+	CheckResult checkSecondaryStat(const std::string& name, size_t value) const;
 	// skills
 	const std::string showSkills() const;
+	size_t getSkillValue(const std::string& str) const;
+	// stats calculation
+	void updateAttention();
 };

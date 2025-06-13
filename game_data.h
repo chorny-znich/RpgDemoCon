@@ -54,5 +54,5 @@ namespace GameData
     EnvironmentType mEnvironmentType{ EnvironmentType::NONE };
   };
 
-  std::pair<size_t, size_t> DICE{ 1, 12 };
+  const std::pair<size_t, size_t> DICE{ 1, 12 };
 }

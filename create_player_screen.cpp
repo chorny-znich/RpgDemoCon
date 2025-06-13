@@ -55,10 +55,23 @@ void CreatePlayerScreen::createPlayer()
     for (const auto& stat : PrimaryStatsList) {
       ofs << stat << "=" << mPlayer.getPrimaryStatValue(stat) << "\n";
     }
+    ofs << "\n[Secondary stats]\n";
+    for (const auto& stat : SecondaryStatsList) {
+      ofs << stat << "=" << mPlayer.getSecondaryStatValue(stat) << "\n";
+    }
+    ofs << "\n[Skills]\n";
+    for (const auto& skill : SkillsList) {
+      ofs << skill << "=" << mPlayer.getSkillValue(skill) << "\n";
+    }
   }
   else {
     std::cout << "\nCan't create a file with player's information\n";
   }
+}
+
+void CreatePlayerScreen::calcStats()
+{
+  mPlayer.updateAttention();
 }
 
 void CreatePlayerScreen::init()
@@ -85,14 +98,14 @@ void CreatePlayerScreen::handleInput()
       if (mStatsPoints > 0 && mPlayer.getPrimaryStatValue(PrimaryStatsList[mMenuIndex]) < 10) {
         mPlayer.increasePrimaryStat(PrimaryStatsList[mMenuIndex]);
         mStatsPoints--;
-        //calcStats();
+        calcStats();
       }
       break;
     case 'a':
       if (mStatsPoints < START_STATS_POINTS && mPlayer.getPrimaryStatValue(PrimaryStatsList[mMenuIndex]) > 1) {
         mPlayer.decreasePrimaryStat(PrimaryStatsList[mMenuIndex]);
         mStatsPoints++;
-        //calcStats();
+        calcStats();
       }
       break;
     case 32:

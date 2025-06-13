@@ -23,11 +23,14 @@ void ExploreScreen::checkVisibility(std::vector<GameData::Position> pos)
 {
   for (auto& value : pos) {
     auto obj = mObjectManager.getObject(value);
-    if (!obj->isVisible() && mPlayer.checkSecondaryStat("Attention", obj->getVisibility()) {
-      obj->setVisibility(true);
+    if (!obj->isVisible()) {
+      CheckResult checkResult = mPlayer.checkSecondaryStat("Attention", obj->getVisibility());
+      if (!obj->isVisible() && checkResult.getResult()) {
+        obj->setVisibleStatus(true);
+      }
+      mConsoleUI.addToHud(UI_Part::GAME_LOG, checkResult.showLog(), 0);
     }
-  }
-  //std::cout << std::format("Objects for check: {}\n", pos.size());
+  } 
 }
 
 /**
@@ -123,14 +126,15 @@ void ExploreScreen::handleInput()
         pickItem();
         break;
       }
-    }
-    mGameplayState = GameplayState::PLAYER_TURN;
+      mGameplayState = GameplayState::PLAYER_TURN;
+    } 
   }
 }
 
 void ExploreScreen::update()
 {
   if (mGameplayState == GameplayState::PLAYER_TURN) {
+    mConsoleUI.clear(UI_Part::GAME_LOG);
     // move the player
     if (mPlayer.isMoving()) {
       if (detectCollision(mPlayer.getPosition(), mPlayer.getMovement())) {
@@ -156,6 +160,7 @@ void ExploreScreen::render()
     mObjectManager.render(mCurrentMap.getRenderMap());
     mPlayer.render(mCurrentMap.getRenderMap());
     mCurrentMap.render();
+    mConsoleUI.display(UI_Part::GAME_LOG);
     mGameplayState = GameplayState::PLAYER_INPUT;
   }
 }

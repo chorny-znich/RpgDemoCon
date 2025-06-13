@@ -20,6 +20,7 @@ private:
   void showScreen();
   void showPrimaryStats();
   void createPlayer();
+  void calcStats();
 public:
   void init() override;
   void handleInput() override;

@@ -15,6 +15,21 @@ void Player::create()
   dr::IniDocument doc = dr::load(GameData::path::PlayerInfo);
   dr::Section section = doc.getSection("Player");
   setName(section.at("Name"));
+  // Set primary stats
+  section = doc.getSection("Primary stats");
+  for (auto& stat : mPrimaryStats) {
+    stat.second = std::stoul(section.at(stat.first));
+  }
+  // Set secondary stats
+  section = doc.getSection("Secondary stats");
+  for (auto& stat : mSecondaryStats) {
+    stat.second = std::stoul(section.at(stat.first));
+  }
+  // set skills
+  section = doc.getSection("Skills");
+  for (auto& skill : mSkills) {
+    skill.second = std::stoul(section.at(skill.first));
+  }
 }
 
 void Player::moveWest()

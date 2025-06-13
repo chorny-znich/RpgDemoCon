@@ -1,7 +1,6 @@
 #include "rp_stats.h"
 #include "game_data.h"
 #include "engine_utility.h"
-#include "check_result.h"
 #include <iostream>
 #include <format>
 
@@ -78,14 +77,13 @@ const std::string RPStats::showSecondaryStats() const
 	return result;
 }
 
-CheckResult RPStats::checkSecondaryStat(const std::string& name, int value) const
+CheckResult RPStats::checkSecondaryStat(const std::string& name, size_t value) const
 {
 	CheckResult result;
 	size_t randomValue = dr::EngineUtility::getRandomInRange(GameData::DICE.first, GameData::DICE.second);
-	mConsoleUI.addToHud(UI_Type::GAME_LOG, std::format("Search Skill:{} Dice:{} Value to check:{} ???\n",
-		mPlayer.getSecondaryStatValue("Attention"),
-		randomValue, value), 0);
-	return (mPlayer.getSecondaryStatValue("Attention") + randomValue >= value) ? true : false;
+	result.createLog(std::format("Search Skill:{} Dice:{} Value to check:{} ???\n", getSecondaryStatValue(name),
+		randomValue, value, 0));
+	result.setResult((getSecondaryStatValue(name) + randomValue >= value) ? true : false);
 	return result;
 }
 
@@ -99,4 +97,14 @@ const std::string RPStats::showSkills() const
 	result.append("\n");
 
 	return result;
+}
+
+size_t RPStats::getSkillValue(const std::string& str) const
+{
+	return mSkills.at(str);
+}
+
+void RPStats::updateAttention()
+{
+	setSecondaryStatValue("Attention", std::floor(getPrimaryStatValue("Perception") * ATTENTION_MODIFIER) + getSkillValue("Search"));
 }
